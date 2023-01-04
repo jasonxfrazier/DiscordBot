@@ -15,6 +15,6 @@ def Season_Episode(show: dict) -> list:
     return([season,episode])
 
 def Show_Picker() -> list:
-    show_list: list(dict) = [theGuy,thePark,theDad]
+    show_list: list(dict) = [theGuy,thePark,theDad,leave]
     show_num: int = rd.randint(1,4)
     return show_list[show_num-1]
