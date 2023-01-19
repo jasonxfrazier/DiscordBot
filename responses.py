@@ -3,6 +3,8 @@ import logic
 
 def handle_response(message) -> str:
     p_message: str = message.lower()
+    if p_message == "/help":
+        return f"**Random episode generator commands:**\n`Family Guy: /theguy`\n`American Dad: /thedad`\n`South Park: /thepark`\n`I Think You Should Leave: /leave`\n`It's Always Sunny in Phillidelphia: /sunny`\n`If you're feeling lucky: /lucky`"
     if p_message == "/theguy":
         result: list = logic.Season_Episode(logic.theGuy)
         return f"**Family Guy S{result[0]} E{result[1]}**"
@@ -15,6 +17,14 @@ def handle_response(message) -> str:
     if p_message == "/leave":
         result: list = logic.Season_Episode(logic.leave)
         return f"**I Think You Should Leave S{result[0]} E{result[1]}**"
+    if p_message == "/sunny":
+        result: list = logic.Season_Episode(logic.sunny)
+        return f"**It's Aways Sunny in Phillidelphia S{result[0]} E{result[1]}**"
+
+    # if p_message == "/NEWSHOW":
+        # result: list = logic.Season_Episode(logic.NEWSHOW)
+        # return f"**NEWSHOW S{result[0]} E{result[1]}**"
+
     if p_message == "/lucky":
         show = logic.Show_Picker()
         if show == logic.theGuy:
@@ -29,5 +39,10 @@ def handle_response(message) -> str:
         if show == logic.leave:
             result: list = logic.Season_Episode(logic.leave)
             return f"**I Think You Should Leave S{result[0]} E{result[1]}**"
-    if p_message == "/help":
-        return f"**Random episode generator commands:**\n`For Family Guy: /theguy`\n`For American Dad: /thedad`\n`For South Park: /thepark`\n`I Think You Should Leave: /leave`\n`If you're feeling lucky: /lucky`"
+        if show == logic.sunny:
+            result: list = logic.Season_Episode(logic.sunny)
+            return f"**It's Aways Sunny in Phillidelphia S{result[0]} E{result[1]}**"   
+        
+        # if show == logic.NEWSHOW:
+        #     result: list = logic.Season_Episode(logic.NEWSHOW)
+        #     return f"**NEWSHOW S{result[0]} E{result[1]}**"

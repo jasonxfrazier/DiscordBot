@@ -33,7 +33,7 @@ def run_discord_bot() -> None:
         user_message: str = str(message.content)
         print(f"{username} said: '{user_message}' ({channel})")
 
-        if user_message not in ['/theguy','/thedad','/thepark','/lucky','/leave','/help']:
+        if user_message not in ['/help','/theguy','/thedad','/thepark','/lucky','/leave','/sunny']: # add new show command here
             return
         if user_message[0] == '?':
             user_message: str = user_message[1:]
