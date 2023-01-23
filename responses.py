@@ -20,7 +20,9 @@ def handle_response(message) -> str:
     if p_message == "/sunny":
         result: list = logic.Season_Episode(logic.sunny)
         return f"**It's Aways Sunny in Phillidelphia S{result[0]} E{result[1]}**"
-
+    if p_message == "/theboys":
+        result: list = logic.Season_Episode(logic.theBoys)
+        return f"**Trailer Park Boys S{result[0]} E{result[1]}**"
     # if p_message == "/NEWSHOW":
         # result: list = logic.Season_Episode(logic.NEWSHOW)
         # return f"**NEWSHOW S{result[0]} E{result[1]}**"
@@ -42,7 +44,9 @@ def handle_response(message) -> str:
         if show == logic.sunny:
             result: list = logic.Season_Episode(logic.sunny)
             return f"**It's Aways Sunny in Phillidelphia S{result[0]} E{result[1]}**"   
-        
+        if show == logic.theBoys:
+            result: list = logic.Season_Episode(logic.theBoys)
+            return f"**Trailer Park Boys S{result[0]} E{result[1]}**"        
         # if show == logic.NEWSHOW:
         #     result: list = logic.Season_Episode(logic.NEWSHOW)
         #     return f"**NEWSHOW S{result[0]} E{result[1]}**"
