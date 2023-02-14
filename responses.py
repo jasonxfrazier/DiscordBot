@@ -4,7 +4,7 @@ import logic
 def handle_response(message) -> str:
     p_message: str = message.lower()
     if p_message == "/help":
-        return f"**Random episode generator commands:**\n`Family Guy: /theguy`\n`American Dad: /thedad`\n`South Park: /thepark`\n`I Think You Should Leave: /leave`\n`It's Always Sunny in Phillidelphia: /sunny`\n`If you're feeling lucky: /lucky`"
+        return f"**Random episode generator commands:**\n`Family Guy: /theguy`\n`American Dad: /thedad`\n`South Park: /thepark`\n`I Think You Should Leave: /leave`\n`It's Always Sunny in Phillidelphia: /sunny`\n`Trailer Park Boys: /theboys`\n`If you're feeling lucky: /lucky`"
     if p_message == "/theguy":
         result: list = logic.Season_Episode(logic.theGuy)
         return f"**Family Guy S{result[0]} E{result[1]}**"
